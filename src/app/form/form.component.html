@@ -1,0 +1,140 @@
+<form [formGroup]="form">
+  <div class="form-container">
+    <label for="email"
+      ><span *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+        >*</span
+      >
+      E-mail:</label
+    >
+    <input
+      formControlName="email"
+      id="email"
+      type="email"
+      class="form-control"
+    />
+  </div>
+  <div class="form-container">
+    <label for="password"
+      ><span
+        *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+        >*</span
+      >Password:</label
+    >
+    <input
+      formControlName="password"
+      id="password"
+      type="password"
+      class="form-control"
+    />
+  </div>
+  <div class="form-container">
+    <label for="rePassword"
+      ><span
+        *ngIf="
+          form.get('rePassword')?.invalid && form.get('rePassword')?.touched
+        "
+        >*</span
+      >Confirm password:</label
+    >
+    <input
+      formControlName="rePassword"
+      id="rePassword"
+      type="password"
+      class="form-control"
+    />
+  </div>
+  <div class="form-container">
+    <label for="nickname"
+      ><span
+        *ngIf="form.get('nickname')?.invalid && form.get('nickname')?.touched"
+        >*</span
+      >Nickname:</label
+    >
+    <input
+      formControlName="nickname"
+      id="nickname"
+      type="text"
+      class="form-control"
+    />
+  </div>
+  <div class="form-container">
+    <label for="phoneNumber"
+      ><span
+        *ngIf="
+          form.get('phoneNumber')?.invalid && form.get('phoneNumber')?.touched
+        "
+        >*</span
+      >Phone Number:</label
+    >
+    <input
+      formControlName="phoneNumber"
+      id="phoneNumber"
+      type="text"
+      class="form-control"
+    />
+  </div>
+  <div class="form-container">
+    <label for="website"
+      ><span
+        *ngIf="form.get('website')?.invalid && form.get('website')?.touched"
+        >*</span
+      >Website:</label
+    >
+    <input
+      formControlName="website"
+      id="website"
+      type="text"
+      class="form-control"
+      placeholder="website"
+    />
+  </div>
+  <div class="form-container">
+    <input
+      type="checkbox"
+      id="checkbox"
+      class="form-check-input"
+      formControlName="checkbox"
+      [attr.disabled]="isDisabled ? true : null"
+    />
+    <label for="checkbox" class="form-check-label"
+      >I have read the <a href="#" class="link-primary"> agreement</a></label
+    >
+  </div>
+  <button
+    *ngIf="!this.isDisabled"
+    [disabled]="!this.form.value.checkbox || !passwordMatch"
+    class="btn btn-primary"
+    type="submit"
+    (click)="onNewProfile()"
+  >
+    Register
+  </button>
+  <button
+    *ngIf="this.isDisabled"
+    [disabled]="!passwordMatch"
+    class="btn btn-danger"
+    type="submit"
+    (click)="onEditclick()"
+  >
+    Save
+  </button>
+</form>
+
+<div class="table">
+  <div class="table-header">
+    <div>#</div>
+    <div>E-mail</div>
+    <div>Password</div>
+    <div>Nickname</div>
+    <div>Phone number</div>
+    <div>Website</div>
+    <div></div>
+  </div>
+  <app-profiles
+    *ngFor="let profile of profiles; let i = index"
+    [profiles]="profiles"
+    [profile]="profile"
+    [index]="i"
+    (editIndex)="onEditProfile($event)"
+  ></app-profiles>
+</div>

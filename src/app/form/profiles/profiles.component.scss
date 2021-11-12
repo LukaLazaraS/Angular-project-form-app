@@ -1,0 +1,22 @@
+.profile-row {
+  width: 100%;
+  display: flex;
+
+  padding-top: 15px;
+  margin-bottom: 5px;
+  border-top: 1px solid rgb(216, 216, 216);
+
+  div {
+    width: 25%;
+    padding: 0;
+
+    &:first-child {
+      width: 7%;
+    }
+
+    &:last-child {
+      width: 15%;
+      transform: translateY(-20%);
+    }
+  }
+}

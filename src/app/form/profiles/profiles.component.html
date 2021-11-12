@@ -1,0 +1,14 @@
+<div class="profile-row">
+  <div>{{ index + 1 }}</div>
+  <div>{{ profile.email }}</div>
+  <div>{{ profile.password }}</div>
+  <div>{{ profile.nickname }}</div>
+  <div>{{ profile.phoneNumber }}</div>
+  <div>{{ profile.website }}</div>
+  <div>
+    <button (click)="onDelete()" class="btn">
+      <i class="fas fa-trash-alt"></i>
+    </button>
+    <button (click)="onEdit()" class="btn"><i class="fas fa-edit"></i></button>
+  </div>
+</div>

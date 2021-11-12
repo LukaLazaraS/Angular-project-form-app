@@ -1,0 +1,76 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 30px;
+
+  max-width: 455px;
+  margin: auto;
+
+  .form-container {
+    display: flex;
+
+    &:first-child {
+      margin-top: 50px;
+    }
+
+    .form-check-input {
+      width: 17px;
+      height: 17px;
+    }
+
+    .form-check-label {
+      margin-right: 86px;
+      margin-left: 10px;
+    }
+
+    label span {
+      color: red;
+    }
+
+    .link-primary {
+      text-decoration: none;
+    }
+  }
+
+  input {
+    width: 300px;
+    height: 30px;
+    margin-left: 15px;
+  }
+
+  button {
+    align-self: center;
+    margin-right: 50px;
+    width: 90px;
+  }
+}
+
+.table {
+  width: 1200px;
+  margin: 50px auto 0;
+  padding: 15px;
+  padding-bottom: 5px;
+  border: 1px solid rgb(216, 216, 216);
+  margin-bottom: 80px;
+
+  .table-header {
+    width: 100%;
+    display: flex;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+
+    div {
+      width: 25%;
+
+      &:first-child {
+        width: 7%;
+      }
+
+      &:last-child {
+        width: 15%;
+      }
+    }
+  }
+}
